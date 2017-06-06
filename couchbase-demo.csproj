@@ -2,6 +2,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <UserSecretsId>aspnet-couchbase_demo-A8B20353-C2CA-4DD2-9498-CA12E580651F</UserSecretsId>
+    <DebugType>portable</DebugType>
+    <AssemblyName>couchbase_demo</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>couchbase_demo</PackageId>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+wp80+win8+wpa81+dnxcore50</PackageTargetFallback>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\" />

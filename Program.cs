@@ -26,7 +26,7 @@ namespace couchbase_demo
                 .ConfigureLogging(loggerFactory => loggerFactory
                     .AddConsole()
                     .AddDebug())
-                .UseStartup<Startup>()
+                .UseStartup<Startup>().UseUrls("http://*:5000")
                 .Build();
 
             host.Run();
