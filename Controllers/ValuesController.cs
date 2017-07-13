@@ -19,41 +19,27 @@ namespace couchbase_demo.Controllers
         [HttpGet]
         public string Get()
         {
-            return "v1";
+            // return "v1";
 
-
-            // using (var cluster = new Cluster())
-            // {
-            //     using (var bucket = cluster.OpenBucket("travel-sample"))
-            //     {
-            //         // Query by id.
-            //         using (var queryResult = bucket.Query<dynamic>("SELECT * FROM `travel-sample` LIMIT 10"))
-            //         {
-            //             return JsonConvert.SerializeObject(queryResult);
-            //         }
-            //     }
-            //} 
-
-
-            // var config = new ClientConfiguration
-            // {
-            //     Servers = new List<Uri>
-            //     {
-            //         new Uri("http://couchbase-cb.rhel-cdk.10.1.2.2.xip.io:8091")
-            //     }
-            // };
-            // using (var cluster = new Cluster(config))
-            // {
-            //     using (var bucket = cluster.OpenBucket("travel-sample"))
-            //     {
-            //         // Query to get 10 documents.
-            //         using (var queryResult = bucket.Query<dynamic>("SELECT * FROM `travel-sample` LIMIT 10"))
-            //         {
-            //             return JsonConvert.SerializeObject(queryResult);
-            //             //return "HELLO WORLD v2";
-            //         }
-            //     }
-            // }
+            var config = new ClientConfiguration
+            {
+                Servers = new List<Uri>
+                {
+                    new Uri("http://10.1.2.2:8091")
+                }
+            };
+            using (var cluster = new Cluster(config))
+            {
+                using (var bucket = cluster.OpenBucket("travel-sample"))
+                {
+                    // Query to get 10 documents.
+                    using (var queryResult = bucket.Query<dynamic>("SELECT * FROM `travel-sample` LIMIT 10"))
+                    {
+                        return JsonConvert.SerializeObject(queryResult);
+                        //return "HELLO WORLD v2";
+                    }
+                }
+            }
         }
 
         // GET api/values/5
