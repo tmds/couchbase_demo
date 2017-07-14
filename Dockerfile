@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/dotnet20-runtime-rhel7
+FROM registry.access.redhat.com/dotnet_beta/dotnet-20-runtime-rhel7
 
 ADD bin/Release/netcoreapp2.0/rhel.7-x64/publish/. .
 
